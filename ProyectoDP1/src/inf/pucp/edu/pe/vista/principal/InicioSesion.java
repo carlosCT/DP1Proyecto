@@ -23,6 +23,7 @@ public class InicioSesion extends javax.swing.JFrame {
      */
     public InicioSesion() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Iniciar Sesión");
         //this.setLocationRelativeTo(null);
         setBounds(400, 100, 369, 396);
         PanelImagen p = new PanelImagen();
