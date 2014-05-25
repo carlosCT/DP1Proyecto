@@ -26,7 +26,7 @@ public class AgregarTiempoDeSimulacion extends javax.swing.JFrame {
         p.setBorder(new EmptyBorder(5, 5, 5, 5));
         p.setLayout(new BorderLayout(0, 0));
         setContentPane(p);
-        
+        this.setTitle("Configuración");
         initComponents();
         //jPanel1.setBackground(Color.lightGray);
         //jTable1.setBackground(colorPanel);
