@@ -6,6 +6,7 @@
 
 package inf.pucp.edu.pe.vista.principal;
 
+import inf.pucp.edu.pe.CargaDatos.MenuPrincipalCarga;
 import inf.pucp.edu.pe.vista.simulacion.MenuPrincipalSimulacion;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -75,7 +76,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnSeguridad = new javax.swing.JButton();
         btnReporte = new javax.swing.JButton();
-        btnSimulacion = new javax.swing.JButton();
+        btnSimulacion1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -105,14 +107,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnSimulacion.setBackground(new java.awt.Color(255, 255, 255));
-        btnSimulacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inf/pucp/edu/pe/Iconos/Simulacion2.jpg"))); // NOI18N
-        btnSimulacion.setText("SIMULACION");
-        btnSimulacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnSimulacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnSimulacion.addActionListener(new java.awt.event.ActionListener() {
+        btnSimulacion1.setBackground(new java.awt.Color(255, 255, 255));
+        btnSimulacion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inf/pucp/edu/pe/Iconos/Simulacion2.jpg"))); // NOI18N
+        btnSimulacion1.setText("SIMULACION");
+        btnSimulacion1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSimulacion1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSimulacion1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimulacionActionPerformed(evt);
+                btnSimulacion1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inf/pucp/edu/pe/Iconos/nube2.jpg"))); // NOI18N
+        jButton1.setText("CARGA DATOS");
+        jButton1.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarMasiva(evt);
             }
         });
 
@@ -130,24 +144,29 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(btnSimulacion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(btnReporte)
-                .addGap(56, 56, 56)
-                .addComponent(btnSeguridad)
-                .addGap(55, 55, 55))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSimulacion1)
+                    .addComponent(btnReporte))
+                .addGap(135, 135, 135)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSeguridad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(116, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSimulacion)
+                    .addComponent(btnSimulacion1)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(67, 67, 67)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnReporte)
                     .addComponent(btnSeguridad))
-                .addGap(182, 182, 182))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         btnReporte.getAccessibleContext().setAccessibleDescription("null");
@@ -169,10 +188,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         //ms.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnSeguridadActionPerformed
 
-    private void btnSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulacionActionPerformed
+    private void btnSimulacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimulacion1ActionPerformed
         MenuPrincipalSimulacion mps= new MenuPrincipalSimulacion();
         mps.setVisible(true);
-    }//GEN-LAST:event_btnSimulacionActionPerformed
+    }//GEN-LAST:event_btnSimulacion1ActionPerformed
+
+    private void btnCargarMasiva(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarMasiva
+          MenuPrincipalCarga mpcm= new MenuPrincipalCarga();
+        mpcm.setVisible(true);
+    }//GEN-LAST:event_btnCargarMasiva
 
     /**
      * @param args the command line arguments
@@ -181,7 +205,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnReporte;
     private javax.swing.JButton btnSeguridad;
-    private javax.swing.JButton btnSimulacion;
+    private javax.swing.JButton btnSimulacion1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
