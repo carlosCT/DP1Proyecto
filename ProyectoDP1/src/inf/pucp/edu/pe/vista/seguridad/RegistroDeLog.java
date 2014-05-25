@@ -32,7 +32,7 @@ public class RegistroDeLog extends javax.swing.JInternalFrame {
         initComponents();
         //jPanel1.setBackground(Color.lightGray);
         //jTable1.setBackground(colorPanel);
-        this.setTitle("Reporte de Volumen de Autos");
+        this.setTitle("Registro de Log");
         jPanel1.setOpaque(false);
         this.setClosable(true);
         this.setMaximizable(false);
