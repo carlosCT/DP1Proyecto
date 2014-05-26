@@ -6,10 +6,17 @@
 
 package inf.pucp.edu.pe.vista.simulacion;
 
+
+
+import inf.pucp.edu.pe.simulacion.animacion.Core;
+import static inf.pucp.edu.pe.simulacion.animacion.Core.Size;
+import static inf.pucp.edu.pe.simulacion.animacion.Core.name;
 import inf.pucp.edu.pe.vista.principal.PanelImagenVentana;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.border.EmptyBorder;
 
 /**
@@ -21,8 +28,11 @@ public class MenuPrincipalSimulacion extends javax.swing.JFrame {
     /**
      * Creates new form MenuPrincipalSimulacion
      */
+    
+    public static JInternalFrame iframe= new JInternalFrame();
     public MenuPrincipalSimulacion() {
-                this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //this.setLocationRelativeTo(null);
         
@@ -35,12 +45,27 @@ public class MenuPrincipalSimulacion extends javax.swing.JFrame {
         initComponents();
         
         //inicio la pantalla de simulacion
-        Simulador s= new Simulador();
-        this.add(s);
-        System.out.println(this.getBounds());
-        s.setBounds(0, 62, 1000, 450);
         
-        s.setVisible(true);
+//        this.add(iframe);
+//        System.out.println(this.getBounds());
+//        iframe.setBounds(0, 62, 800, 600);
+//        iframe.setVisible(true);
+         Core core= new Core();
+      this.add(iframe);
+      iframe.add(core);
+      iframe.pack();
+      
+      Size = new Dimension(iframe.getWidth(),iframe.getHeight());
+      
+      iframe.setTitle(name);
+      iframe.setResizable(false);
+      //iframe.setLocationRelativeTo(null);
+      iframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      iframe.setBounds(0, 62, 800, 600);
+      iframe.setVisible(true);
+      core.start();
+        
+   
         jToolBar1.setBackground(Color.WHITE);
     }
 
