@@ -178,6 +178,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         //this.setVisible(false);
         MenuPrincipalReporte mr= new MenuPrincipalReporte();
         mr.setVisible(true);
+        
         //mr.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnReporteActionPerformed
 
@@ -196,6 +197,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnCargarMasiva(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarMasiva
           MenuPrincipalCarga mpcm= new MenuPrincipalCarga();
         mpcm.setVisible(true);
+        
     }//GEN-LAST:event_btnCargarMasiva
 
     /**

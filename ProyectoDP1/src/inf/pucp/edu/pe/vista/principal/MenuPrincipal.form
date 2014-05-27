@@ -44,7 +44,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnSimulacion1" min="-2" max="-2" attributes="0"/>
@@ -135,9 +135,6 @@
           <Image iconType="3" name="/inf/pucp/edu/pe/Iconos/nube2.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="CARGA DATOS"/>
-        <Property name="bounds" type="java.awt.Rectangle" editor="org.netbeans.beaninfo.editors.RectangleEditor">
-          <Rectangle value="[0, 0, 0, 0]"/>
-        </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
         <Property name="verticalTextPosition" type="int" value="3"/>
