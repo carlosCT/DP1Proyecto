@@ -35,7 +35,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="185" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="189" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -52,15 +52,21 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
+              <Table columnCount="5" rowCount="4">
                 <Column editable="true" title="Cruce" type="java.lang.Object"/>
-                <Column editable="true" title="Luces" type="java.lang.Object"/>
+                <Column editable="true" title="Luces Hor." type="java.lang.Object"/>
+                <Column editable="true" title="Luces Ver." type="java.lang.Object"/>
                 <Column editable="true" title="Tiempo de cambio" type="java.lang.Object"/>
                 <Column editable="true" title="Tiempo actual" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>

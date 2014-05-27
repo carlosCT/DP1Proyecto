@@ -32,7 +32,7 @@ public class MostrarInformacionDeSemaforos extends javax.swing.JInternalFrame {
         initComponents();
         //jPanel1.setBackground(Color.lightGray);
         //jTable1.setBackground(colorPanel);
-        this.setTitle("Información de los semaforos");
+        this.setTitle("Información de los cruces");
         //jPanel1.setOpaque(false);
         this.setClosable(true);
         this.setMaximizable(false);
@@ -55,13 +55,13 @@ public class MostrarInformacionDeSemaforos extends javax.swing.JInternalFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Cruce", "Luces", "Tiempo de cambio", "Tiempo actual"
+                "Cruce", "Luces Hor.", "Luces Ver.", "Tiempo de cambio", "Tiempo actual"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -79,7 +79,7 @@ public class MostrarInformacionDeSemaforos extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

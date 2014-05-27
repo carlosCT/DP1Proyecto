@@ -54,7 +54,7 @@ public class AgregarTiempoDeSimulacion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 255));
 
-        jButton1.setText("Aceptar");
+        jButton1.setText("Iniciar");
 
         jButton2.setText("Cancelar");
 
