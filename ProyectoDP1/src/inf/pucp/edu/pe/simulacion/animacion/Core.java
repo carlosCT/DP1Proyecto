@@ -54,7 +54,7 @@ public class Core extends Applet implements Runnable{
   public void start(){
       requestFocus();
       //define class
-      level = new Level(1);
+      level = new Level(2);
       player= new movimiento();
       try {
           new Tile();

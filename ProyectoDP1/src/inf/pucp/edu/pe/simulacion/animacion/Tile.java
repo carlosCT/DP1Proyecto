@@ -33,7 +33,7 @@ public class Tile {
     //collision
     
     //characters
-    public static int size= 400;
+    public static int size= 100;
     public static BufferedImage terrain, background, items, characters;
     //public static BufferedImage background;
     
@@ -42,7 +42,7 @@ public class Tile {
     
      
             try {
-                Tile.background=ImageIO.read(new File(getClass().getResource("/inf/pucp/edu/pe/animacion/imagenes/carretera.png").toURI()));
+                Tile.background=ImageIO.read(new File(getClass().getResource("/inf/pucp/edu/pe/animacion/imagenes/carretera2.png").toURI()));
                 Tile.characters=ImageIO.read(new File(getClass().getResource("/inf/pucp/edu/pe/animacion/imagenes/apuntador.png").toURI()));
              // Tile.terrain=ImageIO.read(new File("file/bk.png"));//se debe cambiar
              // Tile.items=ImageIO.read(new File("file/bk.png"));//se debe cambiar
