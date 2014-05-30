@@ -16,11 +16,30 @@ public class Usuario {
     private String email;
     private String direccion;
     private String usuario;
-    private String sexo;
+    private int sexo;
     private String contrasena;
-    private String estadoBloqueo;
+    private int estadoBloqueo;  //1:bloqueado, 0:normal
     private int perfil;
 
+    public Usuario(){
+        
+    }
+    
+    public Usuario(String dni, String nombres, String apellidos, String email, String direccion, 
+                String usuario, int sexo, String contrasena, int estadoBloqueo, int perfil){
+        this.dni=dni;
+        this.nombres=nombres;
+        this.apellidos=apellidos;
+        this.email=email;
+        this.direccion=direccion;
+        this.usuario=usuario;
+        this.sexo=sexo;
+        this.contrasena=contrasena;
+        this.estadoBloqueo=estadoBloqueo;
+        this.perfil=perfil;
+    }
+    
+    
     public String getDni() {
         return dni;
     }
@@ -69,11 +88,11 @@ public class Usuario {
         this.usuario = usuario;
     }
 
-    public String getSexo() {
+    public int getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(int sexo) {
         this.sexo = sexo;
     }
 
@@ -85,11 +104,11 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
-    public String getEstadoBloqueo() {
+    public int getEstadoBloqueo() {
         return estadoBloqueo;
     }
 
-    public void setEstadoBloqueo(String estadoBloqueo) {
+    public void setEstadoBloqueo(int estadoBloqueo) {
         this.estadoBloqueo = estadoBloqueo;
     }
 
