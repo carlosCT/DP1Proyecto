@@ -6,6 +6,9 @@
 
 package inf.pucp.edu.pe.vista.principal;
 
+import inf.pucp.edu.pe.beans.Usuario;
+import inf.pucp.edu.pe.controlador.ControladorSeguridad;
+import inf.pucp.edu.pe.controlador.UsuarioDAO;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JFrame;
@@ -54,7 +57,7 @@ public class InicioSesion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         btnIngresar = new javax.swing.JButton();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
@@ -96,8 +99,6 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField2.setText("jPasswordField2");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -120,7 +121,7 @@ public class InicioSesion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtUsuario)
-                    .addComponent(jPasswordField2))
+                    .addComponent(txtPassword))
                 .addGap(59, 59, 59))
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -154,7 +155,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresar)
@@ -170,8 +171,26 @@ public class InicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        MenuPrincipal mp= new MenuPrincipal();
-        mp.setVisible(true);
+        
+        char[] pass = txtPassword.getPassword();
+        
+        String contrasena = new String(pass);
+        
+                 
+        ControladorSeguridad seg= new ControladorSeguridad();
+        
+        int i= seg.Login(txtUsuario.getText(), contrasena);
+                
+        if (i==1){ //si es usuario
+           MenuPrincipal mp= new MenuPrincipal();
+            mp.setVisible(true);
+            this.dispose();
+        } else{
+            JOptionPane.showMessageDialog( null, "Los datos no coinciden con ningun usuario" );
+            txtUsuario.setText("");
+            txtPassword.setText("");
+        }
+        
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
@@ -210,18 +229,7 @@ public class InicioSesion extends javax.swing.JFrame {
         });
         
         
-        /*
-        EventQueue.invokeLater(new Runnable() {
-        public void run() {
-        try {
-        MenuPrincipal frame = new MenuPrincipal();
-        frame.setVisible(true);
-        } catch (Exception e) {
-        e.printStackTrace();
-        }
-        }
-        });
-        */
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -233,7 +241,7 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

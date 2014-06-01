@@ -25,6 +25,12 @@ public class Usuario {
         
     }
     
+    public Usuario(String usuario, String password){
+        this.usuario=usuario;
+        this.contrasena=password;
+    }
+    
+    
     public Usuario(String dni, String nombres, String apellidos, String email, String direccion, 
                 String usuario, int sexo, String contrasena, int estadoBloqueo, int perfil){
         this.dni=dni;
