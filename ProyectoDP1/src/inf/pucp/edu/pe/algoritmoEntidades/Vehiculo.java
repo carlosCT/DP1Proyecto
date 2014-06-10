@@ -284,7 +284,7 @@ public class Vehiculo {
                     
                 }else if(this.posActualY > this.destinoY){
                     
-                    this.posActualY -= this.velActual;
+                    this.posActualY += this.velActual;
                     if(this.posActualY <= this.destinoY){
                         
                         this.posActualY = this.destinoY;
@@ -698,7 +698,7 @@ public class Vehiculo {
     
     public void imprimirDatosVehiculo(){
         
-        System.out.println("Posicion (X,Y): " +"("+ this.posActualX +", "+ this.posActualY+")");
+        System.out.println("VEH"+ this.id +" Posicion (X,Y): " +"("+ this.posActualX +", "+ this.posActualY+")");
         
     }
     

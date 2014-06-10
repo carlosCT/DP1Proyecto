@@ -11,6 +11,7 @@ import inf.pucp.edu.pe.algoritmoEntidades.Vehiculo;
 import inf.pucp.edu.pe.algoritmoEntidades.Via;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
 /**
@@ -21,14 +22,14 @@ public class Simulacion {
     
     //<editor-fold desc="Atributos">
     
-    public int mapaX = 600;     //Tamaño X: debe ser 240000
-    public int mapaY = 600;     //Tamaño Y:debe ser 160000
+    public int mapaX = 240000;     //Tamaño X: debe ser 240000
+    public int mapaY = 160000;     //Tamaño Y:debe ser 160000
     public int numCruces;
     
     public int numCrucesEnFila;
     public int numCrucesEnColumna;
     
-    public int metrosCadaSemaforo = 100; //metros entre cada semaforo
+    public int metrosCadaSemaforo = 400; //metros entre cada semaforo
     public int distCalle = 100;          //distancia de las calles  
     
     public ArrayList<Via> vias = new ArrayList<Via>();
@@ -84,9 +85,9 @@ public class Simulacion {
         
         
         this.generarCruces();
-        this.generarVias();
-        this.establecerCrucesaVias();
-        this.imprimirMatrizCruces(this);
+        //this.generarVias();
+        //this.establecerCrucesaVias();
+        //this.imprimirMatrizCruces(this);
         
         
         //imprimirVias();
@@ -107,11 +108,12 @@ public class Simulacion {
         
         velocidadPromedio = 0;
         densidadPromedio = 0;
-        
+        int tiempo = 0;
         
         try{
             
             simulacion.iniCrucesVias();
+            simulacion.imprimirMatrizCruces(simulacion);
             simulacion.ingresarSolucionMapa(solucion);
             simulacion.listaCarros = Vehiculo.leerInicioDestino("vehiculos.txt");
             
@@ -132,7 +134,7 @@ public class Simulacion {
                 //Borrar vehiculos que llegaro na su destino
                 
                 simulacion.limpiarCarros(i);
-                
+                tiempo = i;
                 if(simulacion.listaCarros.isEmpty()) break;
                 
             }
@@ -155,6 +157,8 @@ public class Simulacion {
             
         }
         
+       simulacion.imprimirVehiculos();
+       System.out.println(tiempo);
        return (velocidadPromedioTotal);
     }
     
@@ -402,7 +406,30 @@ public class Simulacion {
             int minuto = (int)(tiempo/60);
             int segundo = (int)(tiempo%60);
             
+            for (Iterator<Vehiculo> iterator = this.listaCarros.iterator(); iterator.hasNext(); ) {
+                Vehiculo v = iterator.next();
+                
+                if(v.getPosActualX() == v.getDestinoX() 
+                        && v.getPosActualY() == v.getDestinoY()){
 
+                    String resultado = new String();
+                    double vpromKM = (v.velocidadPromedio)*3.6;
+
+                    resultado = "Vehiculo " + v.id + 
+                            ": Vprom = " + v.velocidadPromedio+ "m/s = " + vpromKM + " km/h" ;
+                    resultadoPorVehiculo.add(resultado);
+                    System.out.println("Llego a su destino Vehiculo numero :" + 
+                            v.id + "Llego en tiempo: Minuto " + minuto + " Segundo" + segundo);
+                    
+                    
+                    iterator.remove();
+
+
+                }
+            }   
+            
+            
+            /*
             for(Integer j : identificador){
 
                 String resultado = new String();
@@ -414,13 +441,27 @@ public class Simulacion {
                 System.out.println("Llego a su destino Vehiculo numero :" + 
                         this.listaCarros.get(j.intValue()).id + "Llego en tiempo: Minuto " + minuto + " Segundo" + segundo);
                 this.listaCarros.remove(j.intValue());
+                
 
 
             }
-        
+            */ 
         
         }
         
+    }
+    
+    public void imprimirVehiculos(){
+        
+        if(!listaCarros.isEmpty()){
+        
+            for(Vehiculo v : listaCarros){
+
+                v.imprimirDatosVehiculo();
+
+            }
+        
+        }
     }
         
 }     

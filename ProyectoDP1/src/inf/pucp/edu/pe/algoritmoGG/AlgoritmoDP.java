@@ -25,6 +25,7 @@ public class AlgoritmoDP {
         
        Simulacion simulacion = new Simulacion(); 
        simulacion.iniCrucesVias();
+       
        try{
        simulacion.listaCarros = Vehiculo.leerInicioDestino("vehiculos.txt");
        
